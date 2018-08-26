@@ -13,7 +13,11 @@ class Post(models.Model):
 
     def publish(self):
         self.published_date = timezone.now()
-        self.save()
+        self.save() # można dodać def unpublish(self)
 
     def __str__(self):
-        return self.title
+        return self.title #wyświetlanie nazwy postu
+
+    def pokazowa(self):
+        self.title = 'cokolwiek'
+        self.save()
